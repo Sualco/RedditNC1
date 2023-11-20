@@ -11,22 +11,37 @@ var viewC = arrayComment1()
 
 struct CommentView: View {
     var body: some View {
-        List{
+        List (){
             ForEach (viewC.comments1) {baba in
-                Section {
-                        Text( baba.comment)
-                        Text( baba.comment)
-                        Text( baba.comment)
-                        Text( baba.comment)
-                    Text( baba.comment)
-                    Text( baba.comment)
-                    Text( baba.comment)
-                    Text( baba.comment)
-                    Text( baba.comment)
-                    Text( baba.comment)
-                    Text( baba.comment)
-                    Text( baba.comment)
+                
+                    VStack{
+                        HStack{
+                            Image( baba.commentLogo)
+                                .resizable()
+                                .frame(width: 30.0, height: 30.0)
+                            Text (baba.userComment)
+                        }
+                        
+                       
                     }
+                    Text( baba.comment)
+                    HStack{
+                        Image (systemName: "arrow.uturn.left")
+                            .padding(.trailing)
+                        Image (systemName: "arrowshape.up")
+                            .foregroundStyle(Color.orange)
+                            .onTapGesture {
+                                viewC.updateCommentUpvote(for: baba)
+                            }
+                        Text("\(baba.commentUpvote)")
+                        Image (systemName: "arrowshape.down")
+                            .foregroundStyle(Color.orange)
+                            .onTapGesture {
+                                viewC.updateCommentDownvote(for: baba)
+                            }
+                        
+                    }
+                    
                 
             }
             

@@ -73,7 +73,7 @@ struct ThreadView: View {
             }
             
             CommentView()
-                .padding()
+                
         }
     }
     

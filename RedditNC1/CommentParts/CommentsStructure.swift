@@ -7,7 +7,12 @@
 
 import Foundation
 
-struct CommentsStructure: Identifiable {
+struct CommentsStructure1: Identifiable, Equatable {
     var id: UUID = UUID()
+    var userComment: String
     var comment: String
+    var commentLogo: String
+    var commentUpvote: Int
+    var commentDownvote: Int
+    var commentHasUpvote: Bool
 }
