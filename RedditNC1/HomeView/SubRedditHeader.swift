@@ -29,8 +29,7 @@ struct SubRedditHeader: View {
                 .font(.subheadline)
                 .fontWeight(.light)
                 .foregroundColor(Color.black)
-                .padding(.leading, 12.0)
-        
+                .padding()
         }
         
     }

@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct ThreadView: View {
-    @ObservedObject var threadStructure = ThreadStructure()
     var threadV: Tdetails
     
     var body: some View {
+        
         VStack {
             HStack{
                 Image(threadV.userlogo)
@@ -30,8 +30,7 @@ struct ThreadView: View {
                 Image(threadV.image ?? "")
                     .resizable()
                     .scaledToFit()
-                    .padding()
-            }
+                                }
             
             Text(threadV.description)
                 .font(.body)
@@ -50,9 +49,8 @@ struct ThreadView: View {
                 .padding(5)
                 .overlay(
                 RoundedRectangle(cornerRadius: 20)
-                    
-                    .stroke(Color.black, lineWidth: 1))
-                .offset(x: 140.0, y: 35.0)
+                  .stroke(Color.black, lineWidth: 1))
+                  .offset(x: 140.0, y: 35.0)
             
             HStack {
                 Image(systemName: "arrowshape.up")
@@ -68,22 +66,18 @@ struct ThreadView: View {
                     RoundedRectangle(cornerRadius: 40)
                         .stroke(Color.black, lineWidth: 1))
                 .padding(.trailing, 200.0)
-            .onTapGesture {
-                updateUpvote()
-            }
+            
             
             CommentView()
-                
+                .padding(.top)
         }
     }
     
-    private func updateUpvote() {
-        threadStructure.updateUpvote(for: threadV)
-    }
+   
 }
 
 struct ThreadView_Previews: PreviewProvider {
     static var previews: some View {
-        ThreadView(threadV: Tdetails(user:"u/lol", userlogo: "logor1",title: "Example", description: "Description", upvote: 0, downvote: 0, hasUpvoted: false))
+        ThreadView(threadV: Tdetails(user:"u/lol", userlogo: "logor1",title: "Example", description: "Description", upvote: 0, downvote: 0, hasUpvoted: false, hasDownvoted: false))
     }
 }

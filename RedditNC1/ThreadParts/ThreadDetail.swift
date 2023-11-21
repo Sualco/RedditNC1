@@ -19,4 +19,5 @@ struct Tdetails: Identifiable, Equatable {
     var upvote: Int
     var downvote: Int
     var hasUpvoted: Bool
+    var hasDownvoted: Bool
 }

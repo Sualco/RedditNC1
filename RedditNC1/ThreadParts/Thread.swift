@@ -7,13 +7,10 @@
 
 import SwiftUI
 
-
-
-
-
 struct Thread: View {
 @ObservedObject var viewT = ThreadStructure()
-   
+@State private var uarrowColor: Color = .black
+@State private var darrowColor: Color = .black
     
     var body: some View {
         
@@ -65,16 +62,34 @@ struct Thread: View {
                                 HStack {
                                     
                                     Image ( systemName: "arrowshape.up")
-                                        .foregroundStyle(Color.orange)
-                                        .onTapGesture {
-                                            viewT.updateUpvote(for: bubu)
+                                        .foregroundStyle(bubu.hasUpvoted ? .orange : .black)
+                                            .onTapGesture {
+                                            if !bubu.hasUpvoted {
+                                                viewT.updateUpvote(for: bubu)
+                                                uarrowColor = Color.orange
+                                                darrowColor = Color.black
+                                            } else {
+                                                viewT.undoUpvote(for: bubu)
+                                                uarrowColor = Color.black
+                                            }
                                         }
                                     Text ("\(bubu.upvote)")
+                                    
                                     Image (systemName: "arrowshape.down")
-                                        .foregroundStyle(.orange)
+                                        .foregroundStyle(bubu.hasDownvoted ? .cyan : .black)
                                         .onTapGesture {
-                                            viewT.updateDownvote(for: bubu)
+                                            if !bubu.hasDownvoted {
+                                                        viewT.updateDownvote(for: bubu)
+                                                        darrowColor = .cyan
+                                                        uarrowColor = .black
+                                                    } else {
+                                                        viewT.undoDownvote(for: bubu)
+                                                        darrowColor = .black
+                                                    }
+                                            
                                         }
+                                    
+        
                                    
                                     
                                   
@@ -84,18 +99,10 @@ struct Thread: View {
                                     RoundedRectangle(cornerRadius: 40)
                                         .stroke(Color.black, lineWidth: 1))
                                 .padding(.trailing, 200.0)
-                                
-                                
-                                
-                                    
-                                   
                                     
                             }
                             
                         }
-                            
-                        
-                        
                         else {
                             
                             VStack {
@@ -136,17 +143,31 @@ struct Thread: View {
                                 
                                 HStack {
                                     Image ( systemName: "arrowshape.up")
-                                        .foregroundStyle(Color.orange)
+                                        .foregroundStyle(bubu.hasUpvoted ? .orange : .black)
+                                       
                                         .onTapGesture {
-                                            viewT.updateUpvote(for: bubu)
-                                        }
+                                            if !bubu.hasUpvoted {
+                                                viewT.updateUpvote(for: bubu)
+                                                uarrowColor = Color.orange
+                                            } else {
+                                                viewT.undoUpvote(for: bubu)
+                                                uarrowColor = Color.black
+                                            }
+                                        }.disabled(bubu.hasUpvoted || bubu.hasDownvoted)
                                     Text ("\(bubu.upvote)")
-                                    Image (systemName: "arrowshape.down")
-                                        .foregroundStyle(.orange)
-                                        .onTapGesture {
-                                            viewT.updateDownvote(for: bubu)
-                                        }
                                     
+                                    Image (systemName: "arrowshape.down")
+                                        .foregroundStyle(bubu.hasDownvoted ? .cyan : .black)
+                                        .onTapGesture {
+                                            if !bubu.hasDownvoted {
+                                                        viewT.updateDownvote(for: bubu)
+                                                        darrowColor = .cyan
+                                                    } else {
+                                                        viewT.undoDownvote(for: bubu)
+                                                        darrowColor = .black
+                                                    }
+                                            
+                                        }.disabled(bubu.hasDownvoted || bubu.hasUpvoted)
                                     
                                 }.padding(5.5)
                                     .overlay(
@@ -159,16 +180,11 @@ struct Thread: View {
                             
                         }
                         
-                        
-                        
-                        
-                        
-                        
                     }
                     
                 }
                 
-            }.listStyle(.automatic)
+            }.listStyle(.plain)
         }
         
     }

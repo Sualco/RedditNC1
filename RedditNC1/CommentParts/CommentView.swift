@@ -29,13 +29,13 @@ struct CommentView: View {
                         Image (systemName: "arrow.uturn.left")
                             .padding(.trailing)
                         Image (systemName: "arrowshape.up")
-                            .foregroundStyle(Color.orange)
+                            .foregroundStyle(Color.black)
                             .onTapGesture {
                                 viewC.updateCommentUpvote(for: baba)
                             }
                         Text("\(baba.commentUpvote)")
                         Image (systemName: "arrowshape.down")
-                            .foregroundStyle(Color.orange)
+                            .foregroundStyle(Color.black)
                             .onTapGesture {
                                 viewC.updateCommentDownvote(for: baba)
                             }
