@@ -153,7 +153,7 @@ struct Thread: View {
                                                 viewT.undoUpvote(for: bubu)
                                                 uarrowColor = Color.black
                                             }
-                                        }.disabled(bubu.hasUpvoted || bubu.hasDownvoted)
+                                        }
                                     Text ("\(bubu.upvote)")
                                     
                                     Image (systemName: "arrowshape.down")
@@ -167,7 +167,7 @@ struct Thread: View {
                                                         darrowColor = .black
                                                     }
                                             
-                                        }.disabled(bubu.hasDownvoted || bubu.hasUpvoted)
+                                        }
                                     
                                 }.padding(5.5)
                                     .overlay(

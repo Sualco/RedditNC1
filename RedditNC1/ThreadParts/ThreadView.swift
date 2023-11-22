@@ -55,12 +55,12 @@ struct ThreadView: View {
             HStack {
                 Image(systemName: "arrowshape.up")
                     
-                    .foregroundStyle(Color.orange)
+                    .foregroundStyle(Color.black)
                 Text("\(threadV.upvote)")
                     
                 Image(systemName: "arrowshape.down")
                     
-                    .foregroundStyle(Color.orange)
+                    .foregroundStyle(Color.black)
             }.padding(5)
                 .overlay(
                     RoundedRectangle(cornerRadius: 40)
@@ -68,7 +68,7 @@ struct ThreadView: View {
                 .padding(.trailing, 200.0)
             
             
-            CommentView()
+            CommentView2()
                 .padding(.top)
         }
     }

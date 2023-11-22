@@ -10,8 +10,9 @@ import Foundation
 class ThreadStructure: ObservableObject {
    
    @Published var structure = [
-    Tdetails(user: "u/jojo", userlogo: "logor1", title: "How can i make this buttons?", description: "Hi everyone i want to ask something to all of you: \n I want to make this button for my app but i don't know how to, can you help me? \n", image: "image1", upvote: 15, downvote: 0, hasUpvoted: false, hasDownvoted: false),
+    
     Tdetails(user: "u/Swiftlover", userlogo: "logor2",title: "SwiftData", description: "What do you think about SwiftData?", image: nil, upvote: 45, downvote: 0, hasUpvoted: false, hasDownvoted: false),
+    Tdetails(user: "u/jojo", userlogo: "logor1", title: "How can i make this buttons?", description: "Hi everyone i want to ask something to all of you: \n I want to make this button for my app but i don't know how to, can you help me? \n", image: "image1", upvote: 15, downvote: 0, hasUpvoted: false, hasDownvoted: false),
     Tdetails(user: "u/CodingBeast", userlogo: "logor3",title: "Best Practices for Writing Clean and Maintainable Swift Code", description: "Share your tips and tricks for writing clean and easily maintainable Swift code. What are your favorite best practices?", image: nil, upvote: 18, downvote: 0,hasUpvoted: false, hasDownvoted: false),
     Tdetails(user: "u/FNS26", userlogo: "logor4",title: "What do you think about Vision Pro?", description: "Vision Pro is finally announced, what do you think about this project? it is gonna be the next success from Apple?", image: "image2", upvote: 90, downvote: 0,hasUpvoted: false, hasDownvoted: false),
     Tdetails(user: "u/SwiftDevPro22", userlogo: "logor5",title: "SwiftUI vs UIKit: Which Do You Prefer and Why?", description: "A comparison between SwiftUI and UIKit: advantages, disadvantages, and personal preferences. Share your experience and find out what other developers think!", image: nil, upvote: 70, downvote: 0,hasUpvoted: false, hasDownvoted: false),

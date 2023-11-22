@@ -62,7 +62,12 @@ class arrayComment1 {
 
 class arrayComment2 {
     var comments2 = [
-        CommentsStructure1(userComment: "", comment: "", commentLogo: "logor4", commentUpvote: 20, commentDownvote: 0, commentHasUpvote: false),]
+        CommentsStructure1(userComment: "User123", comment: "I've been using Swift Data for a while now, and it's been fantastic for handling and manipulating data in my iOS projects. The syntax is clean, and the performance is impressive. Highly recommended!", commentLogo: "logor4", commentUpvote: 20, commentDownvote: 0, commentHasUpvote: false),
+    CommentsStructure1(userComment: "DevExplorer42", comment: "Swift Data has made working with data in Swift so much more convenient for me. The Codable protocols make serialization and deserialization a breeze. It's definitely a powerful feature of the language!"
+, commentLogo: "logor3", commentUpvote: 12, commentDownvote: 0, commentHasUpvote: false),
+    CommentsStructure1(userComment: "CodeEnthusiast007", comment: "I initially found Swift Data a bit challenging to grasp, but once I got the hang of it, I appreciated its safety features and the ease of working with types. It adds a layer of confidence to my code.", commentLogo: "logor1", commentUpvote: 37, commentDownvote: 0, commentHasUpvote: false),
+    CommentsStructure1(userComment: "iOSdevRookie", comment: "Just started learning Swift, and I'm already impressed with how Swift Data simplifies tasks like JSON decoding. It seems like a solid choice for handling data in iOS development. Any tips for a newbie?", commentLogo: "logor10", commentUpvote: 74, commentDownvote: 0, commentHasUpvote: false),
+    CommentsStructure1(userComment: "TechWizard99", comment: "I've worked with several programming languages, and I must say, Swift Data is one of the reasons I enjoy iOS development. The combination of type safety and performance makes it stand out. What's your favorite feature?", commentLogo: "logor9", commentUpvote: 24, commentDownvote: 0, commentHasUpvote: false)]
 }
 
 class arrayComment3 {
