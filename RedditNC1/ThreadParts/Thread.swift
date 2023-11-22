@@ -21,7 +21,8 @@ struct Thread: View {
                     NavigationLink {
                         ThreadView(threadV : bubu)
                         
-                    } label: {
+                    }
+                label: {
                         if let imageP = bubu.image, !imageP.isEmpty {
                             
                             VStack(alignment: .center){
@@ -180,12 +181,12 @@ struct Thread: View {
                             
                         }
                         
-                    }
+                }
                     
                 }
                 
             }.listStyle(.plain)
-        }
+        }.accentColor(.black)
         
     }
 }

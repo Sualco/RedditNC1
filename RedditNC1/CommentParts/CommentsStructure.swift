@@ -15,4 +15,5 @@ struct CommentsStructure1: Identifiable, Equatable {
     var commentUpvote: Int
     var commentDownvote: Int
     var commentHasUpvote: Bool
+    var commentHasDownvote: Bool
 }
