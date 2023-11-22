@@ -39,14 +39,14 @@ class ThreadStructure: ObservableObject {
     
     func updateDownvote(for thread: Tdetails) {
             if let index = structure.firstIndex(of: thread), !structure[index].hasDownvoted {
-                structure[index].downvote -= 1
+                structure[index].upvote -= 1
                 structure[index].hasDownvoted = true
             }
         }
     
     func undoDownvote(for thread: Tdetails) {
             if let index = structure.firstIndex(of: thread), structure[index].hasDownvoted {
-                structure[index].downvote += 1
+                structure[index].upvote += 1
                 structure[index].hasDownvoted = false
                 
             }
