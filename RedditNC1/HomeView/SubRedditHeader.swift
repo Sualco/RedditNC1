@@ -14,14 +14,17 @@ struct SubRedditHeader: View {
             Image( systemName: "magnifyingglass")
                 .resizable()
                 .frame(width: 30.0, height: 30.0)
+                .accessibilityLabel("Search button")
                 
             Image( systemName: "arrowshape.turn.up.right.circle")
                 .resizable()
                 .frame(width: 30.0, height: 30.0)
                 .padding(5.0)
+                .accessibilityLabel("Share button")
             Image( systemName: "ellipsis.circle")
                 .resizable()
                 .frame(width: 30.0, height: 30.0)
+                .accessibilityLabel("more action button")
               
         }
         .padding(.leading, 220.0)
@@ -40,6 +43,7 @@ struct SubRedditHeader: View {
                 .padding(.trailing,135.0)
                 .padding(.top, -35)
                 .padding()
+                .accessibilityLabel("Subreddit Name: r/Swift")
         
         RoundedRectangle(cornerRadius: 20)
             .frame(width: 120, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
@@ -57,6 +61,7 @@ struct SubRedditHeader: View {
                 .fontWeight(.light)
                 .foregroundColor(Color.black)
                 .padding()
+                .accessibilityLabel("Subreddit description: Swift is a general-purpose programming language built using a modern approach to safety, performance, and software design patterns.")
     }
         
     }

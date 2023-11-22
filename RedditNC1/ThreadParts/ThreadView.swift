@@ -17,14 +17,17 @@ struct ThreadView: View {
                 Image(threadV.userlogo)
                     .resizable()
                     .frame(width: 30.0, height: 30.0)
+                    .accessibilityLabel("user logo")
                 Text(threadV.user)
                     .fontWeight(.light)
+                    .accessibilityLabel("Username: \(threadV.user)")
             }.padding(.trailing, 200.0)
             
             
             Text(threadV.title)
                 .font(.title)
                 .padding()
+                .accessibilityLabel("Thread title: \(threadV.title)")
             
             if let imageV = threadV.image, !imageV.isEmpty {
                 Image(threadV.image ?? "")
@@ -36,6 +39,7 @@ struct ThreadView: View {
                 .font(.body)
                 .fontWeight(.light)
                 .padding()
+                .accessibilityLabel("Thread Description: \(threadV.description)")
             
             Text ("Comments")
                 .font(.caption)
@@ -50,17 +54,23 @@ struct ThreadView: View {
                 .overlay(
                 RoundedRectangle(cornerRadius: 20)
                   .stroke(Color.black, lineWidth: 1))
-                  .offset(x: 140.0, y: 35.0)
+                .offset(x: 140.0, y: 35.0)
+                .accessibilityLabel("Share Button")
             
             HStack {
                 Image(systemName: "arrowshape.up")
                     
                     .foregroundStyle(Color.black)
+                    .accessibilityLabel("Upvote Button")
+                    .accessibilityHint("Click to upvote")
                 Text("\(threadV.upvote)")
+                    .accessibilityLabel("Upvote number: \(threadV.upvote)")
                     
                 Image(systemName: "arrowshape.down")
                     
                     .foregroundStyle(Color.black)
+                    .accessibilityLabel("Downvote button")
+                    .accessibilityHint("Click to downvote")
             }.padding(5)
                 .overlay(
                     RoundedRectangle(cornerRadius: 40)

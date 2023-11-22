@@ -25,13 +25,18 @@ struct CommentView2: View {
                         Image(baba.commentLogo)
                             .resizable()
                             .frame(width: 30.0, height: 30.0)
+                            .accessibilityLabel("User logo")
                         Text(baba.userComment)
+                            .accessibilityLabel("Username: \(baba.userComment)")
                     }
                 }
                 Text(baba.comment)
+                    .accessibilityLabel("Comment: \(baba.comment)")
                 HStack {
                     Image(systemName: "arrow.uturn.left")
                         .padding(.trailing)
+                        .accessibilityHint("Reply the comment")
+                        
                     Image(systemName: "arrowshape.up")
                         .foregroundStyle(upvoteColors[index])
                         .onTapGesture {
@@ -45,7 +50,13 @@ struct CommentView2: View {
                                 downvoteColors[index] = .black
                             }
                         }
+                        .accessibilityLabel("Upvote button")
+                        .accessibilityHint("Click to upvote")
+                    
                     Text("\(baba.commentUpvote)")
+                        .accessibilityLabel("Upvote number: \(baba.commentUpvote)")
+                    
+                    
                     Image(systemName: "arrowshape.down")
                         .foregroundStyle(downvoteColors[index])
                         .onTapGesture {
@@ -59,6 +70,8 @@ struct CommentView2: View {
                                 upvoteColors[index] = .black
                             }
                         }
+                        .accessibilityLabel("Downvote button")
+                        .accessibilityHint("Click to downvote")
                 }
             }
         }

@@ -30,12 +30,15 @@ struct Thread: View {
                                     Image(bubu.userlogo)
                                         .resizable()
                                         .frame(width: 30.0, height: 30.0)
+                                        .accessibilityLabel("User logo")
                                     Text(bubu.user)
                                         .fontWeight(.light)
+                                        .accessibilityLabel("Username \(bubu.user)")
                                 }.padding(.trailing, 180.0)
                                 
                                 Text (bubu.title)
                                     .fontWeight(.bold)
+                                    .accessibilityLabel("thread title: \(bubu.title)")
                                     
                                 
                                 Image (imageP)
@@ -63,6 +66,7 @@ struct Thread: View {
                                 HStack {
                                     
                                     Image ( systemName: "arrowshape.up")
+                                        
                                         .foregroundStyle(bubu.hasUpvoted ? .orange : .black)
                                             .onTapGesture {
                                             if !bubu.hasUpvoted {
@@ -73,8 +77,11 @@ struct Thread: View {
                                                 viewT.undoUpvote(for: bubu)
                                                 uarrowColor = Color.black
                                             }
-                                        }
+                                            }
+                                            .accessibilityLabel("Upvote button")
+                                            .accessibilityHint("Click to Upvote")
                                     Text ("\(bubu.upvote)")
+                                        .accessibilityLabel("Upvote number: \(bubu.upvote)")
                                     
                                     Image (systemName: "arrowshape.down")
                                         .foregroundStyle(bubu.hasDownvoted ? .cyan : .black)
@@ -89,6 +96,8 @@ struct Thread: View {
                                                     }
                                             
                                         }
+                                        .accessibilityLabel("Downvote Button")
+                                        .accessibilityHint("Click to downvote")
                                     
         
                                    
@@ -112,19 +121,23 @@ struct Thread: View {
                                     Image(bubu.userlogo)
                                         .resizable()
                                         .frame(width: 30.0, height: 30.0)
+                                        .accessibilityLabel("User logo")
                                     Text(bubu.user)
                                         .fontWeight(.light)
+                                        .accessibilityLabel("Username: \(bubu.user)")
                                 }.padding(.trailing, 140.0)
                                 
                                 Text (bubu.title)
                                     .fontWeight(.bold)
                                     .multilineTextAlignment(.leading)
+                                    .accessibilityLabel("thread title: \(bubu.title)")
                                     
                                 Text (bubu.description)
                                     .padding()
                                     .font(.body)
                                     .fontWeight(.light)
                                     .foregroundColor(Color.black)
+                                    .accessibilityLabel("thread description: \(bubu.description)")
                                 
                                 Text ("Comments")
                                     .font(.caption)
@@ -155,7 +168,10 @@ struct Thread: View {
                                                 uarrowColor = Color.black
                                             }
                                         }
+                                        .accessibilityLabel("Upvote button")
+                                        .accessibilityHint("click to upvote")
                                     Text ("\(bubu.upvote)")
+                                        .accessibilityLabel("upvote number: \(bubu.upvote)")
                                     
                                     Image (systemName: "arrowshape.down")
                                         .foregroundStyle(bubu.hasDownvoted ? .cyan : .black)
@@ -169,6 +185,8 @@ struct Thread: View {
                                                     }
                                             
                                         }
+                                        .accessibilityLabel("Downvote button")
+                                        .accessibilityHint("Click to downvote")
                                     
                                 }.padding(5.5)
                                     .overlay(
