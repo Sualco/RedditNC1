@@ -209,8 +209,6 @@ struct Thread: View {
     }
 }
     
-struct Thread_Previews: PreviewProvider {
-        static var previews: some View {
-            Thread()
-        }
-    }
+#Preview {
+    Thread()
+}

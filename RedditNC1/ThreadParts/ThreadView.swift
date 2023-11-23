@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ThreadView: View {
     var threadV: Tdetails
-    
     var body: some View {
         
         VStack {
@@ -86,8 +85,6 @@ struct ThreadView: View {
    
 }
 
-struct ThreadView_Previews: PreviewProvider {
-    static var previews: some View {
-        ThreadView(threadV: Tdetails(user:"u/lol", userlogo: "logor1",title: "Example", description: "Description", upvote: 0, downvote: 0, hasUpvoted: false, hasDownvoted: false))
-    }
+#Preview {
+    ThreadView(threadV: Tdetails(user:"u/lol", userlogo: "logor1",title: "Example", description: "Description", upvote: 0, downvote: 0, hasUpvoted: false, hasDownvoted: false))
 }
