@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Thread: View {
 @ObservedObject var viewT = ThreadStructure()
+@State var showModal =  false
 @State private var uarrowColor: Color = .black
 @State private var darrowColor: Color = .black
     
@@ -55,13 +56,25 @@ struct Thread: View {
                                         .stroke(Color.black, lineWidth: 1))
                                     .offset(x: 0, y: 75.0)
                                 
-                                Image (systemName: "arrowshape.turn.up.right")
-                                    .padding(5)
-                                    .overlay(
-                                    RoundedRectangle(cornerRadius: 20)
-                                        
-                                        .stroke(Color.black, lineWidth: 1))
-                                    .offset(x: 140.0, y: 40.0)
+                                Button(){
+                                    self.showModal = true
+                                }label: {
+                                    Image (systemName: "arrowshape.turn.up.right")
+                                        .foregroundStyle(Color.black)
+                                                    .padding(5)
+                                                    .overlay(
+                                                    RoundedRectangle(cornerRadius: 20)
+                                                      .stroke(Color.black, lineWidth: 1))
+                                                    
+                                                    .accessibilityLabel("Share Button")
+                                                    .sheet(isPresented: $showModal, onDismiss: {
+                                                                                           self.showModal = false
+                                                                                       })
+                                                                                       {
+                                                                                           ModalView()
+                                                                                       }.tint(.black)
+                                }.offset(x: 140.0, y: 37.0)
+                                    .buttonStyle(PlainButtonStyle())
                                 
                                 HStack {
                                     
@@ -147,13 +160,26 @@ struct Thread: View {
                                         .stroke(Color.black, lineWidth: 1))
                                     .offset(x: 0, y: 74.0)
                                 
-                                Image (systemName: "arrowshape.turn.up.right")
-                                    .padding(5)
-                                    .overlay(
-                                    RoundedRectangle(cornerRadius: 20)
-                                        
-                                        .stroke(Color.black, lineWidth: 1))
-                                    .offset(x: 140.0, y: 38.0)
+                                Button(){
+                                    self.showModal = true
+                                }label: {
+                                    Image (systemName: "arrowshape.turn.up.right")
+                                        .foregroundStyle(Color.black)
+                                                    .padding(5)
+                                                    .overlay(
+                                                    RoundedRectangle(cornerRadius: 20)
+                                                      .stroke(Color.black, lineWidth: 1))
+                                                    
+                                                    .accessibilityLabel("Share Button")
+                                                    .sheet(isPresented: $showModal, onDismiss: {
+                                                        self.showModal = false
+                                                                                       })
+                                                                                       {
+                                                                                           ModalView()
+                                                                                               .presentationDetents(([.medium, .large]))
+                                                                                       }.tint(.black)
+                                }.offset(x: 140.0, y: 37.0)
+                                    .buttonStyle(PlainButtonStyle())
                                 
                                 HStack {
                                     Image ( systemName: "arrowshape.up")

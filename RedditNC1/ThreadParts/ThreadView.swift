@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct ThreadView: View {
+    
     var threadV: Tdetails
+    @State var showModal =  false
+    
     var body: some View {
         
         VStack {
@@ -47,14 +50,25 @@ struct ThreadView: View {
                 RoundedRectangle(cornerRadius: 40)
                     .stroke(Color.black, lineWidth: 1))
                 .offset(x: 0, y: 73.0)
+            Button(){
+                self.showModal = true
+            }label: {
+                Image (systemName: "arrowshape.turn.up.right")
+                    .foregroundStyle(Color.black)
+                                .padding(5)
+                                .overlay(
+                                RoundedRectangle(cornerRadius: 20)
+                                  .stroke(Color.black, lineWidth: 1))
+                                
+                                .accessibilityLabel("Share Button")
+                                .sheet(isPresented: $showModal, onDismiss: {
+                                                                       self.showModal = false
+                                                                   })
+                                                                   {
+                                                                       ModalView()
+                                                                   }.tint(.black)
+            }.offset(x: 140.0, y: 35.0)
             
-            Image (systemName: "arrowshape.turn.up.right")
-                .padding(5)
-                .overlay(
-                RoundedRectangle(cornerRadius: 20)
-                  .stroke(Color.black, lineWidth: 1))
-                .offset(x: 140.0, y: 35.0)
-                .accessibilityLabel("Share Button")
             
             HStack {
                 Image(systemName: "arrowshape.up")
