@@ -13,7 +13,7 @@ struct ContentView: View {
            
             SubRedditHeader()
             TabBar()
-        }
+        }.accentColor(.black)
         
     }
             
