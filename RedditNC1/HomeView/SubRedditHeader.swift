@@ -54,7 +54,7 @@ struct SubRedditHeader: View {
         })
             .foregroundStyle(Color.white)
             .padding(.leading, 160.0)
-            .padding(.top, -40.0)
+            .padding(.top, -60.0)
             
             Text("Swift is a general-purpose programming language built using a modern approach to safety, performance, and software design patterns.")
                 .font(.subheadline)

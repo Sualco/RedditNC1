@@ -145,7 +145,7 @@ struct Thread: View {
                                     .overlay(
                                     RoundedRectangle(cornerRadius: 40)
                                         .stroke(Color.black, lineWidth: 1))
-                                    .offset(x: 0, y: 73.0)
+                                    .offset(x: 0, y: 74.0)
                                 
                                 Image (systemName: "arrowshape.turn.up.right")
                                     .padding(5)
@@ -153,7 +153,7 @@ struct Thread: View {
                                     RoundedRectangle(cornerRadius: 20)
                                         
                                         .stroke(Color.black, lineWidth: 1))
-                                    .offset(x: 140.0, y: 35.0)
+                                    .offset(x: 140.0, y: 38.0)
                                 
                                 HStack {
                                     Image ( systemName: "arrowshape.up")
