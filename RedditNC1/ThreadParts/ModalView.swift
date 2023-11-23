@@ -25,7 +25,7 @@ struct ModalView: View {
                             .resizable()
                             .frame(width: 60, height: 60, alignment: .trailing)
                         Text("Whatsapp")
-                            .foregroundStyle(.black)
+                            .foregroundStyle(Color("Color"))
                     }
                 }
                 Button () {
@@ -35,7 +35,7 @@ struct ModalView: View {
                             .resizable()
                             .frame(width: 60, height: 60, alignment: .trailing)
                         Text ("Telegram")
-                            .foregroundStyle(.black)
+                            .foregroundStyle(Color("Color"))
                     }
                 }
                 
@@ -46,7 +46,7 @@ struct ModalView: View {
                             .resizable()
                            .frame(width: 60, height: 60, alignment: .trailing)
                         Text ("Messages")
-                            .foregroundStyle(.black)
+                            .foregroundStyle(Color("Color"))
                     }
                 }
                 Button () {
@@ -56,7 +56,7 @@ struct ModalView: View {
                             .resizable()
                             .frame(width: 60, height: 60, alignment: .trailing)
                         Text ("Email")
-                            .foregroundStyle(.black)
+                            .foregroundStyle(Color("Color"))
                     }
                 }
                 
@@ -71,10 +71,10 @@ struct ModalView: View {
                         Image (systemName:"person")
                             .resizable()
                             .frame(width: 40, height: 40, alignment: .trailing)
-                            .foregroundStyle(Color.black)
+                            .foregroundStyle(Color("Color"))
                         
                         Text ("Community")
-                            .foregroundStyle(.black)
+                            .foregroundStyle(Color("Color"))
                     }
                 }
                 Button () {
@@ -83,10 +83,10 @@ struct ModalView: View {
                         Image (systemName:"bookmark")
                             .resizable()
                             .frame(width: 30, height: 40, alignment: .trailing)
-                            .foregroundStyle(Color.black)
+                            .foregroundStyle(Color("Color"))
                         
                         Text ("Save")
-                            .foregroundStyle(.black)
+                            .foregroundStyle(Color("Color"))
                     }
                     }
                
@@ -96,10 +96,10 @@ struct ModalView: View {
                         Image (systemName:"link")
                             .resizable()
                             .frame(width: 40, height: 40, alignment: .trailing)
-                            .foregroundStyle(Color.black)
+                            .foregroundStyle(Color("Color"))
                         
                         Text ("Copy Link")
-                            .foregroundStyle(.black)
+                            .foregroundStyle(Color("Color"))
                     }
                 }
                 Button () {
@@ -108,10 +108,10 @@ struct ModalView: View {
                         Image (systemName:"square.and.arrow.down")
                             .resizable()
                             .frame(width: 30, height: 40, alignment: .trailing)
-                            .foregroundStyle(Color.black)
+                            .foregroundStyle(Color("Color"))
                         
                         Text ("Download")
-                            .foregroundStyle(.black)
+                            .foregroundStyle(Color("Color"))
                     }
                 }
                 Button () {
@@ -120,10 +120,10 @@ struct ModalView: View {
                         Image (systemName:"photo.fill")
                             .resizable()
                             .frame(width: 40, height: 30, alignment: .trailing)
-                            .foregroundStyle(Color.black)
+                            .foregroundStyle(Color("Color"))
                         
                         Text ("Copy \n Image")
-                            .foregroundStyle(.black)
+                            .foregroundStyle(Color("Color"))
                         
                     }
                 }.offset(x: 0, y: 15.0)

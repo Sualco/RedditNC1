@@ -12,8 +12,8 @@ var viewC2 = arrayComment2()
 
 
 struct CommentView2: View {
-    @State private var upvoteColors: [Color] = Array(repeating: .black, count: viewC2.comments2.count)
-    @State private var downvoteColors: [Color] = Array(repeating: .black, count: viewC2.comments2.count)
+    @State private var upvoteColors: [Color] = Array(repeating: Color("Color"), count: viewC2.comments2.count)
+    @State private var downvoteColors: [Color] = Array(repeating: Color("Color"), count: viewC2.comments2.count)
     
     var body: some View {
         List {
@@ -42,12 +42,13 @@ struct CommentView2: View {
                         .onTapGesture {
                             if upvoteColors[index] == .orange {
                                 viewC2.undoCommentUpvote(for: baba)
-                                upvoteColors[index] = .black
+                                upvoteColors[index] =
+                                Color("Color")
                             } else {
                                 viewC2.updateCommentUpvote(for: baba)
                                 upvoteColors[index] = .orange
-                                // Reset the color of the corresponding downvote arrow
-                                downvoteColors[index] = .black
+                                
+                                downvoteColors[index] = Color("Color")
                             }
                         }
                         .accessibilityLabel("Upvote button")
@@ -60,14 +61,14 @@ struct CommentView2: View {
                     Image(systemName: "arrowshape.down")
                         .foregroundStyle(downvoteColors[index])
                         .onTapGesture {
-                            if downvoteColors[index] == .blue {
+                            if downvoteColors[index] == .cyan {
                                 viewC2.undoCommentDownvote(for: baba)
-                                downvoteColors[index] = .black
+                                downvoteColors[index] = Color("Color")
                             } else {
                                 viewC2.updateCommentDownvote(for: baba)
-                                downvoteColors[index] = .blue
-                                // Reset the color of the corresponding upvote arrow
-                                upvoteColors[index] = .black
+                                downvoteColors[index] = .cyan
+                                
+                                upvoteColors[index] = Color("Color")
                             }
                         }
                         .accessibilityLabel("Downvote button")

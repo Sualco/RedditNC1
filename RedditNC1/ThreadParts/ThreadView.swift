@@ -54,7 +54,7 @@ struct ThreadView: View {
                 self.showModal = true
             }label: {
                 Image (systemName: "arrowshape.turn.up.right")
-                    .foregroundStyle(Color.black)
+                    .foregroundStyle(Color("Color"))
                                 .padding(5)
                                 .overlay(
                                 RoundedRectangle(cornerRadius: 20)
@@ -74,7 +74,7 @@ struct ThreadView: View {
             HStack {
                 Image(systemName: "arrowshape.up")
                     
-                    .foregroundStyle(Color.black)
+                    
                     .accessibilityLabel("Upvote Button")
                     .accessibilityHint("Click to upvote")
                 Text("\(threadV.upvote)")
@@ -82,7 +82,7 @@ struct ThreadView: View {
                     
                 Image(systemName: "arrowshape.down")
                     
-                    .foregroundStyle(Color.black)
+                    
                     .accessibilityLabel("Downvote button")
                     .accessibilityHint("Click to downvote")
             }.padding(5)

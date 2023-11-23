@@ -10,8 +10,8 @@ import SwiftUI
 struct Thread: View {
 @ObservedObject var viewT = ThreadStructure()
 @State var showModal =  false
-@State private var uarrowColor: Color = .black
-@State private var darrowColor: Color = .black
+    @State private var uarrowColor = Color ("Color")
+    @State private var darrowColor = Color ("Color")
     
     var body: some View {
         
@@ -60,7 +60,7 @@ struct Thread: View {
                                     self.showModal = true
                                 }label: {
                                     Image (systemName: "arrowshape.turn.up.right")
-                                        .foregroundStyle(Color.black)
+                                        
                                                     .padding(5)
                                                     .overlay(
                                                     RoundedRectangle(cornerRadius: 20)
@@ -80,8 +80,8 @@ struct Thread: View {
                                 HStack {
                                     
                                     Image ( systemName: "arrowshape.up")
-                                        
-                                        .foregroundStyle(bubu.hasUpvoted ? .orange : .black)
+                                    
+                                        .foregroundStyle(bubu.hasUpvoted ? .orange : Color("Color"))
                                             .onTapGesture {
                                             if !bubu.hasUpvoted {
                                                 viewT.updateUpvote(for: bubu)
@@ -98,7 +98,7 @@ struct Thread: View {
                                         .accessibilityLabel("Upvote number: \(bubu.upvote)")
                                     
                                     Image (systemName: "arrowshape.down")
-                                        .foregroundStyle(bubu.hasDownvoted ? .cyan : .black)
+                                        .foregroundStyle(bubu.hasDownvoted ? .cyan : Color("Color"))
                                         .onTapGesture {
                                             if !bubu.hasDownvoted {
                                                         viewT.updateDownvote(for: bubu)
@@ -150,7 +150,7 @@ struct Thread: View {
                                     .padding()
                                     .font(.body)
                                     .fontWeight(.light)
-                                    .foregroundColor(Color.black)
+                                    
                                     .accessibilityLabel("thread description: \(bubu.description)")
                                 
                                 Text ("Comments")
@@ -165,7 +165,7 @@ struct Thread: View {
                                     self.showModal = true
                                 }label: {
                                     Image (systemName: "arrowshape.turn.up.right")
-                                        .foregroundStyle(Color.black)
+                                        
                                                     .padding(5)
                                                     .overlay(
                                                     RoundedRectangle(cornerRadius: 20)
@@ -184,7 +184,7 @@ struct Thread: View {
                                 
                                 HStack {
                                     Image ( systemName: "arrowshape.up")
-                                        .foregroundStyle(bubu.hasUpvoted ? .orange : .black)
+                                        .foregroundStyle(bubu.hasUpvoted ? .orange : Color("Color"))
                                        
                                         .onTapGesture {
                                             if !bubu.hasUpvoted {
@@ -201,7 +201,7 @@ struct Thread: View {
                                         .accessibilityLabel("upvote number: \(bubu.upvote)")
                                     
                                     Image (systemName: "arrowshape.down")
-                                        .foregroundStyle(bubu.hasDownvoted ? .cyan : .black)
+                                        .foregroundStyle(bubu.hasDownvoted ? .cyan : Color("Color"))
                                         .onTapGesture {
                                             if !bubu.hasDownvoted {
                                                         viewT.updateDownvote(for: bubu)
@@ -231,7 +231,7 @@ struct Thread: View {
                 }
                 
             }.listStyle(.plain)
-        }.accentColor(.black)
+        }
         
     }
 }
