@@ -66,6 +66,7 @@ struct ThreadView: View {
                                                                    })
                                                                    {
                                                                        ModalView()
+                                                                           .presentationDetents(([.medium, .large]))
                                                                    }.tint(.black)
             }.offset(x: 140.0, y: 35.0)
             

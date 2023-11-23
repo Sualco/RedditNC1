@@ -72,6 +72,7 @@ struct Thread: View {
                                                                                        })
                                                                                        {
                                                                                            ModalView()
+                                                                                               .presentationDetents(([.medium, .large]))
                                                                                        }.tint(.black)
                                 }.offset(x: 140.0, y: 37.0)
                                     .buttonStyle(PlainButtonStyle())
