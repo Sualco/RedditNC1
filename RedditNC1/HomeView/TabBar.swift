@@ -41,7 +41,7 @@ struct TabBar: View {
                     Text("Notifications")
                 }
                 
-        }.tint(.black)
+        }.tint(Color("Color"))
         
         
             
