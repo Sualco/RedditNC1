@@ -59,7 +59,7 @@ struct SubRedditHeader: View {
             Text("Swift is a general-purpose programming language built using a modern approach to safety, performance, and software design patterns.")
                 .font(.subheadline)
                 .fontWeight(.light)
-                .foregroundColor(Color.black)
+                
                 .padding()
                 .accessibilityLabel("Subreddit description: Swift is a general-purpose programming language built using a modern approach to safety, performance, and software design patterns.")
     }
